@@ -39,7 +39,7 @@ export default function SurpriseGift() {
             whileHover={{ scale: 1.08 }}
             onClick={handleClick}
           />
-          <p className="gift-text">Click for a surprise</p>
+          <p className="gift-text">Click para una sorpresa</p>
         </>
       ) : (
         <motion.p

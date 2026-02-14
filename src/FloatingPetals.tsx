@@ -32,7 +32,7 @@ export default function FloatingPetals() {
         return (
           <motion.img
             key={i}
-            src="/petal.png" // <-- YOUR PNG
+            src="/petal2.png" // <-- YOUR PNG
             className="petal-img"
             initial={{
               y: -100,
