@@ -44,11 +44,11 @@ export default function Bouquet() {
               src={tulipSrc}
               className="bouquet-flower"
               initial={{
-                x: Math.random() * 800 - 400,
-                y: 400,
+                x: Math.random() * 400 - 200,
+                y: 300,
                 scale: 0,
                 opacity: 0,
-                rotate: Math.random() * 180,
+                rotate: Math.random() * 90,
               }}
               animate={{
                 x,

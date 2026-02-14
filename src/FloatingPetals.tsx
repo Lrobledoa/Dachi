@@ -1,9 +1,22 @@
 import { motion } from "framer-motion";
+import { useMemo } from "react";
 
-const PETAL_COUNT = 35;
+
+const PETAL_COUNT = window.innerWidth < 768 ? 18 : 35;
 
 export default function FloatingPetals() {
-  const petals = Array.from({ length: PETAL_COUNT });
+    const petals = useMemo(() => {
+        return Array.from({ length: PETAL_COUNT }).map(() => ({
+          startX: Math.random() * window.innerWidth,
+          drift: Math.random() * 200 - 100,
+          duration: 8 + Math.random() * 6,
+          delay: Math.random() * 2,
+          rotateStart: Math.random() * 180,
+          rotateEnd: Math.random() > 0.5 ? 360 : -360,
+          scale: 0.6 + Math.random() * 0.8,
+          flip: Math.random() > 0.5,
+        }));
+      }, []);
 
   return (
     <div className="petals-container">
