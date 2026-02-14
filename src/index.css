@@ -1,0 +1,274 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: radial-gradient(circle at center, #111 0%, #000 70%);
+  color: white;
+  font-family: "Playfair Display", serif;
+}
+
+.app {
+  min-height: 100vh;
+  position: relative;
+  transition: background 2s ease;
+  overflow: hidden;
+}
+
+.app.open-mode {
+  overflow-y: auto;
+}
+
+.fade-black {
+  background: black;
+}
+
+/* ENVELOPE SCREEN */
+
+.envelope-screen {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.envelope {
+  font-size: 6rem;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.envelope:hover {
+  transform: scale(1.1);
+}
+
+.open-text {
+  font-size: 1rem;
+  margin-top: 10px;
+  opacity: 0.7;
+}
+
+/* MAIN CONTENT */
+
+.main-content {
+  text-align: center;
+  padding-top: 40px;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.title span {
+  color: #ff6b81;
+  font-style: italic;
+}
+
+.subtitle {
+  margin-top: 10px;
+  opacity: 0.8;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* CAROUSEL */
+
+.carousel {
+  margin: 40px auto;
+  width: 700px;
+  height: 450px;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.carousel-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* QUESTION */
+
+.question {
+  font-size: 2.5rem;
+  margin-top: 20px;
+  text-shadow: 0 0 15px rgba(255, 0, 80, 0.6);
+}
+
+/* BUTTONS */
+
+.buttons {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  position: relative;
+  height: 80px;
+}
+
+button {
+  padding: 14px 32px;
+  margin: 0 10px;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.yes {
+  background: linear-gradient(135deg, #ff6b81, #ff3f6c);
+  color: white;
+  box-shadow: 0 0 20px rgba(255, 80, 120, 0.7);
+}
+
+.yes:hover {
+  transform: scale(1.05);
+}
+
+.no {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  position: relative;
+}
+
+/* PETALS */
+
+.petals-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 999;
+}
+
+.petal {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: radial-gradient(circle, #ff4d6d 40%, #c9184a 100%);
+  border-radius: 50%;
+  opacity: 0.9;
+}
+
+.petal-img {
+  position: absolute;
+  width: 28px;
+  pointer-events: none;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.4));
+}
+
+.glow {
+  animation: glowPulse 2s infinite alternate;
+}
+
+@keyframes glowPulse {
+  from {
+    text-shadow: 0 0 10px rgba(255, 0, 90, 0.6);
+  }
+  to {
+    text-shadow: 0 0 25px rgba(255, 0, 90, 1);
+  }
+}
+.open-stage {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===== BOUQUET SECTION ===== */
+.bouquet-section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px; /* mobile padding */
+  text-align: center;
+}
+
+/* ===== TITLE ===== */
+.love-final {
+  font-size: clamp(2rem, 5vw, 3.5rem); /* responsive text */
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 2px;
+  color: #ff0040;
+  text-shadow: 0 0 20px rgba(255, 120, 150, 0.7);
+  margin-bottom: 10px;
+}
+
+/* ===== BOUQUET ===== */
+.bouquet-container {
+  position: relative;
+  width: clamp(250px, 60vw, 500px); /* responsive width */
+  height: clamp(220px, 50vh, 450px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+/* flowers */
+.bouquet-flower {
+  position: absolute;
+  width: clamp(50px, 15vw, 95px);
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  pointer-events: none;
+  z-index: 100; /* make sure flowers are on top */
+}
+
+/* ribbon on top of flowers */
+.bouquet-ribbon {
+  position: absolute;
+  width: clamp(180px, 35%, 180px);
+  left: 40%;
+  top: 470px;
+  bottom: 0px;
+  transform: translateX(-50%);
+  z-index: 200; /* on top of flowers */
+  pointer-events: none;
+}
+
+/* surprise gift below bouquet */
+.surprise-container {
+  cursor: pointer;
+  text-align: center;
+  margin-top: 225px; /* closer to bouquet */
+  z-index: 50;
+}
+
+.gift-box {
+  width: clamp(80px, 20vw, 150px);
+  filter: drop-shadow(0 0 15px rgba(255, 0, 80, 0.6));
+}
+
+/* responsive adjustments */
+@media (max-width: 768px) {
+  .bouquet-section {
+    gap: 10px;
+  }
+  .love-final {
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+  }
+  .bouquet-container {
+    height: 35vh;
+  }
+  .bouquet-ribbon {
+    bottom: 3px;
+  }
+  .surprise-container {
+    margin-top: 10px;
+  }
+}
