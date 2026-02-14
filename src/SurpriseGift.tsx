@@ -47,7 +47,6 @@ export default function SurpriseGift() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
         >
-          Let me spoil you a little...
         </motion.p>
       )}
     </motion.div>

@@ -14,7 +14,8 @@ body {
   min-height: 100vh;
   position: relative;
   transition: background 2s ease;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .app.open-mode {
@@ -213,7 +214,6 @@ button {
   position: relative;
   width: clamp(250px, 60vw, 500px); /* responsive width */
   height: clamp(220px, 50vh, 450px);
-  display: flex;
   justify-content: center;
   align-items: flex-end;
 }
@@ -221,32 +221,33 @@ button {
 /* flowers */
 .bouquet-flower {
   position: absolute;
-  width: clamp(50px, 15vw, 95px);
-  bottom: 0;
+  height: clamp(110px, 24vh, 190px);
+  width: auto;
   pointer-events: none;
 }
 
 /* ribbon on top of flowers */
 .bouquet-ribbon {
   position: absolute;
-  width: clamp(120px, 40%, 180px);
-  left: 50%;
-  bottom: 10px;
+  width: 140px;
+  left: 35%;
+  bottom: 30px;
+  top:350px;
   transform: translateX(-50%);
   z-index: 200;
-  pointer-events: none;
 }
 
 /* surprise gift below bouquet */
 .surprise-container {
   cursor: pointer;
   text-align: center;
-  margin-top: 25px; /* closer to bouquet */
+  margin-top: 125px; /* closer to bouquet */
   z-index: 50;
 }
 
 .gift-box {
   width: clamp(80px, 20vw, 150px);
+  margin-top: 120px;
   filter: drop-shadow(0 0 15px rgba(255, 0, 80, 0.6));
 }
 
@@ -259,7 +260,7 @@ button {
     font-size: clamp(1.5rem, 6vw, 2.5rem);
   }
   .bouquet-container {
-    height: 35vh;
+    height: 360px;
   }
   .bouquet-ribbon {
     bottom: 3px;
